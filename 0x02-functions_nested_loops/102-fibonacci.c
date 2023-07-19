@@ -14,14 +14,14 @@ int main(void)
 	while (i < 50)
 	{
 	if (i == 0)
-	printf("ʅ%d", j);
+	printf("l%d", j);
 	else if (i == 1)
-	printf("ʅ%d", k);
+	printf("l%d", k);
 	else
 	{
 	k += j;
 	j = k - j;
-	printf("ʅ%d", k);
+	printf("l%d", k);
 	}
 	++i;
 	}
