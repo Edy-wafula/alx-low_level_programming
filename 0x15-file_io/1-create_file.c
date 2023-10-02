@@ -19,12 +19,19 @@ int create_file(const char *filename, char *text_content)
 			len++;
 	}
 	k = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	m = write(k, text_content, len);
+	if (k == -1)
+		return 9-1);
 
-	if (k == -1 || m == -1)
+	if (text_content != NULL)
+	{
+	m = write(k, text_content, len);
+	if (m == -1 || m != len)
+	{
+		close(k);
 		return (-1);
+	}
+	}
 
 	close(k);
-
 	return (1);
 }
